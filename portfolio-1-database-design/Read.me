@@ -1,0 +1,40 @@
+ Portfolio 1: Database Design (NairaPay)
+
+ Case study
+NairaPay is a simulated digital bank in Nigeria. Users: customers, bank tellers and auditors. Major data: customers, accounts, deposits, withdrawals, transfers and transaction logs. Key operations: transfer funds, reverse failed transactions, and audit account balances.
+
+ ER diagram
+![ER diagram](er-diagram.png.png)
+
+ Schema
+The tables are created by schema.sql: customers, accounts and transactions.
+- Every table has a primary key.
+- accounts.customer_id links each account to a customer (foreign key).
+- transactions.from_account_id and to_account_id link each transaction to accounts (foreign keys).
+- CHECK rules stop negative balances and zero or negative amounts. UNIQUE stops duplicate emails and account numbers.
+
+ Normalisation
+
+ The unnormalised table
+| txn_id | account_number | customer_name | customer_email | account_type | balance | amount |
+|---|---|---|---|---|---|---|
+| 1 | 1000000001 | Ada Obi | ada@mail.com | savings | 95000 | 5000 |
+| 2 | 1000000001 | Ada Obi | ada@mail.com | savings | 95000 | 20000 |
+| 3 | 1000000002 | Musa Bello | musa@mail.com | current | 105000 | 5000 |
+
+Problems with this table:
+- Update anomaly: Ada's email is repeated on every row, so changing it means editing many rows, and missing one leaves contradictory data.
+- Insert anomaly: a customer who has opened an account but made no transaction has no row to be stored in.
+- Delete anomaly: deleting a customer's only transaction also deletes the customer's details.
+
+ 1NF
+Every cell holds one value and there are no repeating groups, so the table is already in 1NF.
+ 
+ 2NF
+The key is txn_id + account_number. The columns account_type, balance and the customer details depend only on account_number, not on the whole key. I moved them into an accounts table. The transactions table keeps txn_id, account_number and amount.
+
+ 3NF
+customer_name and customer_email describe the person, not the account. I moved them into a customers table and linked it to accounts with customer_id.
+
+ Conclusion
+My three tables (customers, accounts, transactions) are in 3NF. Each has a primary key, each cell holds one value, and every column describes only the subject of its own table. Ada's email is now stored once, so changing it updates one row.
