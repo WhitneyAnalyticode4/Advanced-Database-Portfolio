@@ -2,7 +2,7 @@ Database Systems: Portfolio Documentation
 
 Name: Dolapo Withney Ibinaiye | Matric number: 2026/A/MIT/0576 | Student ID: 301914528
 
-GitHub repository: https://github.com/WhitneyAnalyticode4/Advanced-Database-Portfolio
+GitHub repository: https://github.com/WhitneyAnalyticode4/Dolapo-Ibinaiye-301914528-Advanced-Database-Portfolio
 
 1. Selected organisation
 
