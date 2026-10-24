@@ -2,8 +2,7 @@ Database Systems: Portfolio Documentation
 
 Name: Dolapo Withney Ibinaiye | Matric number: 2026/A/MIT/0576 | Student ID: 301914528
 
-GitHub repository: https://github.com/WhitneyAnalyticode4/Dolapo-Ibinaiye-301914528-Advanced-Database-Portfolio
-
+GitHub repository: https://github.com/WhitneyAnalyticode4/Ibinaiye-Dolapo-301914528-Advanced-Database-Portfolio.git
 1. Selected organisation
 
 Organisation: NairaPay, a simulated digital bank in Nigeria. Nature of the system: a retail banking platform. Users: customers, bank tellers and auditors. Major data: customers, accounts, deposits, withdrawals, transfers and transaction logs. Key operations: transfer funds, reverse failed transactions, and audit account balances. This case study comes from the Bank / Fintech row of the course brief and is used in all five portfolios.
